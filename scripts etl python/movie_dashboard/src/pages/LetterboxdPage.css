@@ -1,0 +1,7 @@
+.history-hero { margin-top: 4px; }
+.history-list { margin-top: 18px; }
+.list-section-heading p { margin: 8px 0 0; color: var(--muted); font-size: .78rem; }
+.history-filters { display: flex; flex-wrap: wrap; gap: 12px; padding: 14px 16px; border-top: 1px solid var(--line); }
+.history-filters label { display: grid; min-width: 220px; gap: 6px; }
+.history-filters label span { color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.history-filters input, .history-filters select { min-height: 38px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: #171a16; }

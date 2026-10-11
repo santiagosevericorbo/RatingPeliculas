@@ -1,0 +1,14 @@
+[
+  {"number": 1, "name": "ENERO", "theme": "Verano", "emoji": "☀️"},
+  {"number": 2, "name": "FEBRERO", "theme": "Romance / Carnaval", "emoji": "❤️"},
+  {"number": 3, "name": "MARZO", "theme": "Aventura", "emoji": "🗺️"},
+  {"number": 4, "name": "ABRIL", "theme": "Religión", "emoji": "🕊️"},
+  {"number": 5, "name": "MAYO", "theme": "Trabajo / Existencialismo", "emoji": "💼"},
+  {"number": 6, "name": "JUNIO", "theme": "Ciencia ficción", "emoji": "🚀"},
+  {"number": 7, "name": "JULIO", "theme": "Guerra", "emoji": "⚔️"},
+  {"number": 8, "name": "AGOSTO", "theme": "Nostalgia / Política", "emoji": "📼"},
+  {"number": 9, "name": "SEPTIEMBRE", "theme": "Juventud / Primavera", "emoji": "🌸"},
+  {"number": 10, "name": "OCTUBRE", "theme": "Halloween / Terror", "emoji": "🎃"},
+  {"number": 11, "name": "NOVIEMBRE", "theme": "Muerte / Sobrenatural / Crimen", "emoji": "⚰️"},
+  {"number": 12, "name": "DICIEMBRE", "theme": "Navidad / Año Nuevo", "emoji": "🎄"}
+]

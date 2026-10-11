@@ -1,0 +1,23 @@
+{
+  "database": "db/movies.duckdb",
+  "letterboxd_csv": "data/movies/letterboxd/letterboxd_movies.csv",
+  "letterboxd_parquet": "data/movies/letterboxd/letterboxd_movies.parquet",
+  "letterboxd_user_data_directory": "data/movies/letterboxd",
+  "imdb_directory": "data/movies/imdb",
+  "plan_json": "scripts etl python/movie_dashboard/public/data/monthly_movie_plan.json",
+  "history_json": "scripts etl python/movie_dashboard/public/data/letterboxd_history.json",
+  "imdb_crew_path": "data/movies/imdb/title.crew.tsv.gz",
+  "imdb_names_path": "data/movies/imdb/name.basics.tsv.gz",
+  "stages": [
+    {"number": 0, "name": "Conversión de Letterboxd", "folders": []},
+    {"number": 1, "name": "Carga", "folders": ["1_load/movies"]},
+    {"number": 2, "name": "Limpieza", "folders": ["2_clean/movies"]},
+    {"number": 3, "name": "Mapeo", "folders": ["2.5_map"]},
+    {"number": 4, "name": "Deduplicación", "folders": ["3_unique/movies"]},
+    {"number": 5, "name": "Filtrado", "folders": ["4_filter/movies"]},
+    {"number": 6, "name": "Resolución de entidades", "folders": ["5_entity_resolution/movies"]},
+    {"number": 7, "name": "Modelo maestro y enriquecimiento", "folders": ["6_master/movies", "6.5_enrichment"]},
+    {"number": 8, "name": "Puntajes", "folders": ["7_score/movies"]},
+    {"number": 9, "name": "Actividad y listados", "folders": ["8_user_activity/movies", "9_lists/movies"]}
+  ]
+}

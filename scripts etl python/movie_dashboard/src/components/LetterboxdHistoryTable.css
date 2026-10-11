@@ -1,0 +1,8 @@
+.history-table { width: 100%; border-collapse: collapse; text-align: left; }
+.history-table th { padding: 12px 14px; color: var(--muted); background: #1b1e19; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+.history-table td { padding: 12px 14px; border-top: 1px solid var(--line); color: #cfd3c9; font-size: .82rem; }
+.history-table td:first-child { min-width: 190px; }
+.history-table td strong, .history-table td small { display: block; }
+.history-table td strong { color: var(--text); font-weight: 650; }
+.history-table td small { margin-top: 4px; color: var(--muted); font-size: .7rem; }
+.history-table .personal-score { color: var(--accent); font-weight: 750; }
