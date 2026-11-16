@@ -16,6 +16,9 @@ SELECT
     t.rating_tmdb,
     t.votes_tmdb,
 
+    ml.rating_movielens,
+    ml.votes_movielens,
+
     CASE 
         WHEN i.rating_imdb IS NOT NULL
          AND l.rating_letterboxd IS NOT NULL
@@ -36,4 +39,6 @@ LEFT JOIN imdb_movies_filtered i ON m.imdb_id = i.imdb_id
 LEFT JOIN letterboxd_movies_filtered l ON m.title_norm = l.title_norm
    AND ABS(m.year - l.year) <= 1
 
-LEFT JOIN tmdb_movies_filtered t ON m.tmdb_id = t.tmdb_id;
+LEFT JOIN tmdb_movies_filtered t ON m.tmdb_id = t.tmdb_id
+LEFT JOIN movielens_movies_clean ml
+    ON CAST(SUBSTR(m.imdb_id, 3) AS BIGINT) = ml.imdb_numeric_id;

@@ -11,7 +11,8 @@ log_votes AS (
         title_norm,
         LOG10(imdb_votes + 1) AS imdb_log,
         LOG10(tmdb_votes + 1) AS tmdb_log,
-        LOG10(lb_votes + 1)   AS lb_log
+        LOG10(lb_votes + 1)   AS lb_log,
+        LOG10(movielens_votes + 1) AS movielens_log
     FROM base
 ),
 
@@ -20,15 +21,17 @@ normalized AS (
         title_norm,
         imdb_log / MAX(imdb_log) OVER() AS imdb_pop,
         tmdb_log / MAX(tmdb_log) OVER() AS tmdb_pop,
-        lb_log   / NULLIF(MAX(lb_log)   OVER(), 0) AS lb_pop
+        lb_log   / NULLIF(MAX(lb_log)   OVER(), 0) AS lb_pop,
+        movielens_log / NULLIF(MAX(movielens_log) OVER(), 0) AS movielens_pop
     FROM log_votes
 )
 
 SELECT
     title_norm,
     (
-        0.5 * COALESCE(imdb_pop,0) +
-        0.3 * COALESCE(tmdb_pop,0) +
-        0.2 * COALESCE(lb_pop,0)
+        0.4 * COALESCE(imdb_pop,0) +
+        0.25 * COALESCE(tmdb_pop,0) +
+        0.15 * COALESCE(lb_pop,0) +
+        0.2 * COALESCE(movielens_pop,0)
     ) AS popularity_score
 FROM normalized;
