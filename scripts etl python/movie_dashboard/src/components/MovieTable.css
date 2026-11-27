@@ -1,0 +1,13 @@
+.table-scroll { overflow-x: auto; }
+.movie-table { width: 100%; border-collapse: collapse; text-align: left; }
+.movie-table th { position: sticky; top: 0; padding: 12px 14px; color: var(--muted); background: #1b1e19; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+.movie-table td { padding: 13px 14px; border-top: 1px solid var(--line); color: #cfd3c9; font-size: .85rem; white-space: nowrap; }
+.movie-table tbody tr { cursor: pointer; transition: background .12s ease; }
+.movie-table tbody tr:hover { background: #ffffff08; }
+.movie-table td:first-child { min-width: 220px; white-space: normal; }
+.movie-table td strong, .movie-table td small { display: block; }
+.movie-table td strong { color: var(--text); font-weight: 650; }
+.movie-table td small { margin-top: 4px; color: var(--muted); font-size: .72rem; }
+.movie-table .score-cell { color: var(--accent); font-variant-numeric: tabular-nums; font-weight: 750; }
+.category-pill { display: inline-block; max-width: 245px; overflow: hidden; padding: 5px 9px; border: 1px solid #363d2f; border-radius: 999px; color: #d3dcbf; background: #23281f; text-overflow: ellipsis; }
+.movie-table .empty-row { padding: 40px 15px; color: var(--muted); text-align: center; }

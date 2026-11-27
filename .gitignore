@@ -3,3 +3,7 @@
 *.exe
 *.duckdb
 *.csv
+scripts etl python/movie_dashboard/node_modules/
+scripts etl python/movie_dashboard/dist/
+scripts etl python/movie_dashboard/public/data/monthly_movie_plan.json
+scripts etl python/movie_dashboard/public/data/letterboxd_history.json

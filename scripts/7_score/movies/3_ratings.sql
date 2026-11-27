@@ -16,7 +16,9 @@ normalized AS (
         (lb_rating_raw / 5.0) * 10 AS lb_rating,
 
         tmdb_rating,
-        tmdb_votes
+        tmdb_votes,
+        (movielens_rating_raw - 0.5) * (10.0 / 4.5) AS movielens_rating,
+        movielens_votes
 
     FROM base
 ),
@@ -28,6 +30,7 @@ weights AS (
         imdb_rating,
         lb_rating,
         tmdb_rating,
+        movielens_rating,
 
         CASE 
             WHEN imdb_rating IS NOT NULL
@@ -42,7 +45,11 @@ weights AS (
         CASE 
             WHEN tmdb_rating IS NOT NULL
             THEN tmdb_votes / (tmdb_votes + 10000.0)
-        END AS w_tmdb
+        END AS w_tmdb,
+        CASE
+            WHEN movielens_rating IS NOT NULL
+            THEN movielens_votes / (movielens_votes + 5000.0)
+        END AS w_movielens
 
     FROM normalized
 ),
@@ -55,10 +62,11 @@ scored AS (
             imdb_rating * w_imdb +
             lb_rating * w_lb +
             tmdb_rating * w_tmdb
+            + movielens_rating * w_movielens
         )
         /
         NULLIF(
-            w_imdb + w_lb + w_tmdb,
+            w_imdb + w_lb + w_tmdb + w_movielens,
             0
         ) AS meta_score
 

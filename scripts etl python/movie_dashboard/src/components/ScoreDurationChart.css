@@ -1,0 +1,2 @@
+.chart-shell { width: 100%; min-height: 330px; }
+.chart-empty { display: grid; min-height: 300px; place-items: center; padding: 24px; color: var(--muted); text-align: center; }

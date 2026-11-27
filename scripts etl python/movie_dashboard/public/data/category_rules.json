@@ -1,0 +1,26 @@
+{
+  "genre_to_month": {
+    "Adventure": 3,
+    "Action": 3,
+    "Romance": 2,
+    "Musical": 2,
+    "Sci-Fi": 6,
+    "War": 7,
+    "History": 8,
+    "Politics": 8,
+    "News": 8,
+    "Teen": 9,
+    "Family": 12,
+    "Holiday": 12,
+    "Horror": 10,
+    "Thriller": 10,
+    "Mystery": 11,
+    "Crime": 11,
+    "Fantasy": 11,
+    "Biography": 5,
+    "Drama": 5,
+    "Western": 1
+  },
+  "overrides": [],
+  "default": {"number": null, "category": "Sin categoría"}
+}

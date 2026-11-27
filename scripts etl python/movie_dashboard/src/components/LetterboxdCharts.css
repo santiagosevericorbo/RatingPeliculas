@@ -1,0 +1,9 @@
+.analytics-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.analytics-panel { min-width: 0; padding: 18px 18px 8px; }
+.category-chart, .director-chart { min-height: 390px; }
+.rating-chart { grid-column: 1 / -1; }
+.chart-notice { display: grid; min-height: 280px; align-content: center; padding: 20px; color: var(--muted); font-size: .88rem; line-height: 1.65; }
+.chart-notice strong { color: var(--text); }
+.chart-notice p { margin-bottom: 0; }
+.chart-notice code { padding: 2px 5px; border-radius: 4px; color: var(--accent); background: #ffffff0b; }
+@media (max-width: 850px) { .analytics-grid { grid-template-columns: 1fr; } .rating-chart { grid-column: auto; } }
